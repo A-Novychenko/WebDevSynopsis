@@ -1,0 +1,15 @@
+.wrap {
+    padding: 32px;
+}
+
+.nav_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-right: auto;
+    margin-left: auto;
+
+    list-style: none;
+
+}
