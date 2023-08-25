@@ -1,19 +1,19 @@
 import {getAllPosts} from "@/services/postServices";
 import Link from "next/link";
 
-const JavaScryptPage = async () => {
-  const {data} = await getAllPosts("js");
+const HtmlCssPage = async () => {
+  const {data} = await getAllPosts("htmlcss");
   // console.log("data", data);
   return (
     <>
-      <h1 style={{textAlign: "center"}}>JavaScrypt-PAGE</h1>
+      <h1 style={{textAlign: "center"}}>HTML+CSS-PAGE</h1>
       <ul>
         {data.posts &&
           data.posts.map(({_id, title}: Posts) => {
             return (
               <li key={_id}>
                 <Link
-                  href={`/synopsis/javascrypt/${_id}`}
+                  href={`/synopsis/htmlcss/${_id}`}
                   style={{color: "white"}}
                 >
                   {title}
@@ -26,4 +26,4 @@ const JavaScryptPage = async () => {
   );
 };
 
-export default JavaScryptPage;
+export default HtmlCssPage;

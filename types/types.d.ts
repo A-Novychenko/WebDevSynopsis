@@ -10,13 +10,13 @@ type AddPostData = {
   stack: string;
 };
 
-// type GetPostData = {
-//   stack: string;
-// };
-
 type Posts = {
   _id: string;
   title: string;
   description: string;
   stack: string;
+};
+
+type TitleParams = {
+  params: {postId: string};
 };

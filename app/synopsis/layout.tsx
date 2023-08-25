@@ -8,9 +8,9 @@ import type {Metadata} from "next";
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <>
+    <div style={{maxWidth: "1200px", marginRight: "auto", marginLeft: "auto"}}>
       <SynopsisLinks />
       {children}
-    </>
+    </div>
   );
 }
