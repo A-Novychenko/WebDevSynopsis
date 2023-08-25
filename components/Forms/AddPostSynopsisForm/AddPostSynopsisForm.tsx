@@ -25,7 +25,7 @@ export const AddPostSynopsisForm = () => {
 
     console.log("resp", resp);
 
-    if (resp.code === 201) {
+    if (resp?.code === 201) {
       reset();
     }
   };
