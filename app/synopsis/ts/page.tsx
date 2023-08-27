@@ -1,9 +1,9 @@
-import {getAllPosts} from "@/services/postServices";
 import Link from "next/link";
+import {getAllPosts} from "@/services/postServices";
 
 const TSPage = async () => {
   const {data} = await getAllPosts("ts");
-  // console.log("data", data);
+
   return (
     <>
       <h1 style={{textAlign: "center"}}>TS-PAGE</h1>

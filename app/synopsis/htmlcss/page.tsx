@@ -1,5 +1,5 @@
-import {getAllPosts} from "@/services/postServices";
 import Link from "next/link";
+import {getAllPosts} from "@/services/postServices";
 
 const HtmlCssPage = async () => {
   const {data} = await getAllPosts("htmlcss");

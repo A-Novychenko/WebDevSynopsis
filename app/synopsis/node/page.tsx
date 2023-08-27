@@ -1,9 +1,9 @@
-import {getAllPosts} from "@/services/postServices";
 import Link from "next/link";
+import {getAllPosts} from "@/services/postServices";
 
 const ReactPage = async () => {
   const {data} = await getAllPosts("node");
-  // console.log("data", data);
+
   return (
     <>
       <h1 style={{textAlign: "center"}}>NODE-PAGE</h1>

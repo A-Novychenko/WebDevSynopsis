@@ -4,7 +4,6 @@ import styles from "./page.module.css";
 
 const ReactItemPage = async ({params: {postId}}: TitleParams) => {
   const {post} = await getPost(postId);
-  // console.log("respsssss", post);
 
   const {title, description} = post;
   return (
@@ -19,8 +18,6 @@ export async function generateStaticParams() {
   const {
     data: {posts},
   } = await getAllPosts("react");
-
-  // console.log("posts", posts);
 
   return posts.map(({_id}: {_id: string}) => ({postId: _id.toString()}));
 }

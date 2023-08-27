@@ -4,14 +4,6 @@ import {useForm, SubmitHandler} from "react-hook-form";
 import styles from "./AddPostSynopsisForm.module.css";
 import {addPost} from "@/services/postServices";
 
-const reqData = {
-  id: "mongoDB",
-  title: "question",
-  description: "response",
-  stack: "",
-  data: "mongoDB",
-};
-
 export const AddPostSynopsisForm = () => {
   const {
     register,
