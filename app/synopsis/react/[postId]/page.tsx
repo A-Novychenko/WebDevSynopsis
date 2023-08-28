@@ -7,10 +7,12 @@ const ReactItemPage = async ({params: {postId}}: TitleParams) => {
 
   const {title, description} = post;
   return (
-    <section>
-      <h1 className={styles.title}>{title}</h1>
-      <p>{description}</p>
-    </section>
+    post && (
+      <section>
+        <h1 className={styles.title}>{title}</h1>
+        <p>{description}</p>
+      </section>
+    )
   );
 };
 
