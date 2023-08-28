@@ -3,6 +3,7 @@ import {useForm, SubmitHandler} from "react-hook-form";
 
 import styles from "./AddPostSynopsisForm.module.css";
 import {addPost} from "@/services/postServices";
+import {useState} from "react";
 
 export const AddPostSynopsisForm = () => {
   const {
@@ -12,12 +13,16 @@ export const AddPostSynopsisForm = () => {
     reset,
     formState: {errors},
   } = useForm<Inputs>();
+
+  const [description, setDescription] = useState("");
+
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const resp = await addPost(data);
+    const resp = await addPost({...data, description});
 
     console.log("resp", resp);
 
     if (resp?.code === 201) {
+      setDescription("");
       reset();
     }
   };
@@ -51,7 +56,13 @@ export const AddPostSynopsisForm = () => {
           Descripton
           <textarea
             className={styles.description}
-            {...register("description", {required: true})}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setDescription(description + "<br/>");
+              }
+            }}
           />
         </label>
 

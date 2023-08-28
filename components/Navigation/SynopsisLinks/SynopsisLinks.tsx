@@ -69,6 +69,14 @@ export const SynopsisLinks = () => {
             REACT-NATIVE
           </Link>
         </li>
+        <li>
+          <Link
+            href="/synopsis/other"
+            style={{color: "other" === segment ? "green" : "white"}}
+          >
+            OTHER
+          </Link>
+        </li>
       </ul>
     </div>
   );
