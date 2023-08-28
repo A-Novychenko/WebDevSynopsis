@@ -15,6 +15,11 @@ export const AddPostSynopsisForm = () => {
   } = useForm<Inputs>();
 
   const [description, setDescription] = useState("");
+  console.log("description", description);
+
+  // const [description, setDescription] = useState("fjskdjfljk \n kjfkjdf");
+
+  const descrObjs = [{tag: "p", text: ""}];
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const resp = await addPost({...data, description});
@@ -58,11 +63,18 @@ export const AddPostSynopsisForm = () => {
             className={styles.description}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                setDescription(description + "<br/>");
-              }
-            }}
+            // onChange={console.log}
+            // onKeyDown={(e) => {
+            //   if (e.key === "Enter") {
+            //     // setDescription(description + "<br/>");
+            //     setDescription(description + "\n");
+            //   }
+            // }}
+            // onKeyDown={(e) => {
+            //   if (e.key === "Enter") {
+            //     setDescription(description + "<br/>");
+            //   }
+            // }}
           />
         </label>
 

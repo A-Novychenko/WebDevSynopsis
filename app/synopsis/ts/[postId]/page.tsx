@@ -4,14 +4,15 @@ import styles from "./page.module.css";
 
 const TsItemPage = async ({params: {postId}}: TitleParams) => {
   const {post} = await getPost(postId);
-  // console.log("respsssss", post);
 
   const {title, description} = post;
+  const section = description.split("\n");
+
   return (
     post && (
       <section>
         <h1 className={styles.title}>{title}</h1>
-        <p>{description}</p>
+        {section && section.map((el: string, i: any) => <p key={i}>{el}</p>)}
       </section>
     )
   );
